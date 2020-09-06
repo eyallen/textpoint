@@ -1,4 +1,21 @@
 #include "include/TitleSlide.h"
+#include "include/Renderer.h"
+
+#include <ncurses.h>
+
+void TitleSlide::drawSlide()
+{
+    int x, y, titleLen, subTitleLen;
+
+    getmaxyx(stdscr, y, x);
+    titleLen = this->getTitle().length();
+    subTitleLen = this->getSubTitle().length();
+
+    Renderer::drawTitleTextAt(this->getTitle(), (x-titleLen)/2, y/2);
+    Renderer::drawSubTitleTextAt(this->getSubTitle(), (x-subTitleLen)/2, (y/2) + 2);
+
+    refresh();
+}
 
 std::string TitleSlide::getTitle()
 {

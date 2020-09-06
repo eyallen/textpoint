@@ -6,7 +6,6 @@
 #include "include/Slide.h"
 #include "include/TitleSlide.h"
 #include "include/Renderer.h"
-#include "include/TitleSlideRenderer.h"
 
 int main()
 {

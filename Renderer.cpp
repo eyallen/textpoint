@@ -3,6 +3,9 @@
 
 #include "include/Renderer.h"
 
+static const int c_typewriterAnimationSpeed = 200000;
+static const int c_lazerAnimationSpeed = 15000;
+
 void Renderer::initialize()
 {
     // Do some static initialization here
@@ -35,7 +38,7 @@ void Renderer::typewriterTextAt(std::string text, int x, int y)
         mvprintw(y, x+i, "%c", text.at(i));
         refresh();
 
-        usleep(200000);
+        usleep(c_typewriterAnimationSpeed);
     }
 }
 
@@ -50,7 +53,21 @@ void Renderer::lazerTextAt(std::string text, int x, int y)
 
             refresh();
 
-            usleep(15000);
+            usleep(c_lazerAnimationSpeed);
         }
     }
+}
+
+void Renderer::drawTitleTextAt(std::string text, int x, int y)
+{
+    attron(A_UNDERLINE);
+    Renderer::typewriterTextAt(text, x, y);
+    attroff(A_UNDERLINE);
+}
+
+void Renderer::drawSubTitleTextAt(std::string text, int x, int y)
+{
+    attron(A_DIM);
+    Renderer::lazerTextAt(text, x, y);
+    attroff(A_DIM);
 }

@@ -13,6 +13,8 @@ public:
         Slide()
     {}
 
+    virtual void drawSlide();
+
     std::string getTitle();
     void setTitle(std::string title);
 

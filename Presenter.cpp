@@ -18,7 +18,7 @@ void Presenter::startPresentation()
     {
         Renderer::drawSlideNumber(i+1, m_slides.size());
 
-        m_titleRenderer->drawSlide(m_slides[i]);
+        m_slides[i]->drawSlide();
 
         getch();
         clear();
