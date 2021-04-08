@@ -5,6 +5,7 @@
 #include "include/Presenter.h"
 #include "include/Slide.h"
 #include "include/TitleSlide.h"
+#include "include/SectionHeaderSlide.h"
 #include "include/Renderer.h"
 
 int main()
@@ -19,9 +20,13 @@ int main()
     titleSlide2->setTitle("One More Title");
     titleSlide2->setSubTitle("This is another slide for testing.");
 
+    std::shared_ptr<SectionHeaderSlide> sectionHeader = std::make_shared<SectionHeaderSlide>();
+    sectionHeader->setHeader("This is a section header.");
+
     Presenter presenter;
     presenter.addSlide(titleSlide);
     presenter.addSlide(titleSlide2);
+    presenter.addSlide(sectionHeader);
 
     presenter.startPresentation();
 

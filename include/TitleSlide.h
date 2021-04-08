@@ -2,7 +2,6 @@
 #define TITLESLIDE_H
 
 #include <string>
-#include <memory>
 
 #include "Slide.h"
 

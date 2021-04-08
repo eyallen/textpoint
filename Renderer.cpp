@@ -71,3 +71,10 @@ void Renderer::drawSubTitleTextAt(std::string text, int x, int y)
     Renderer::lazerTextAt(text, x, y);
     attroff(A_DIM);
 }
+
+void Renderer::drawSectionHeaderAt(std::string text, int x, int y)
+{
+    attron(A_BOLD);
+    Renderer::drawTextAt(text, x, y);
+    attroff(A_BOLD);
+}

@@ -10,7 +10,7 @@ include_directories(${CURSES_INCLUDE_DIR})
 include_directories(${CMAKE_SOURCE_DIR}/include) # -I flags for compiler
 
 # source
-set(PROGSRC Presenter.cpp Renderer.cpp Slide.cpp TitleSlide.cpp)
+set(PROGSRC Presenter.cpp Renderer.cpp Slide.cpp TitleSlide.cpp SectionHeaderSlide.cpp)
 
 # define executable target prog, specify sources
 add_executable(textpoint textpoint.cpp ${PROGSRC})                 

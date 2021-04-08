@@ -26,6 +26,7 @@ public:
     //       and the slides should know the layout/position.
     static void drawTitleTextAt(std::string text, int x, int y);
     static void drawSubTitleTextAt(std::string text, int x, int y);
+    static void drawSectionHeaderAt(std::string text, int x, int y);
 };
 
 #endif
